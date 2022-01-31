@@ -15,17 +15,103 @@
 // 	-On SAVE: store the date/time as the key and the event as the value
 // 		-create an event listener for the save button that puts this key, 	
 // 		value pair into local storage
-// 5.On refresh, grab the data from local storage and display it in the apppropriate time block.
+// 5.On refresh, grab the data from local storage and display it in the appropriate time block.
 
-// Gets current date
+// Gets current date/hour
 const currentDate = new Date();
-
-// var dateDisplay = $("<h1>").addClass(date-display).text(currentDate)
+var currentHour = currentDate.getHours();
+// var hour = ((currentHour + 11) % 12 + 1);
+// console.log(hour)
 
 // Displays current date at top of calendar
 function displayDate() {
-$("#currentDay").text(currentDate)
+    $("#currentDay").text(currentDate)
 };
 
 displayDate();
 
+
+// Color-codes time blocks for past, present and future
+// $(".hour").each(function(){
+//     var hourVal = parseInt($(this).prop("id"));
+//     console.log(hourVal)
+//     if(hourVal > hour && hourVal < hour+6) {
+//         $(".time-block").addClass("future")
+//     } else if (hourVal < hour && hourVal > hour+6) {
+//         $(".time-block").addClass("past")
+//     } else if (hourVal === hour) {
+//         $(".time-block").addClass("present")
+//     }
+// })
+
+    if(currentHour <= 8) {
+        $("#time-block-1").addClass("future")
+    } else if (currentHour > 9) {
+        $("#time-block-1").addClass("past")
+    } else if (currentHour === 9) {
+        $("#time-block-1").addClass("present")
+    };
+
+    if(currentHour <= 9) {
+        $("#time-block-2").addClass("future")
+    } else if (currentHour > 10) {
+        $("#time-block-2").addClass("past")
+    } else if (currentHour === 10) {
+        $("#time-block-2").addClass("present")
+    };
+
+    if(currentHour <= 10) {
+        $("#time-block-3").addClass("future")
+    } else if (currentHour > 11) {
+        $("#time-block-3").addClass("past")
+    } else if (currentHour === 11) {
+        $("#time-block-3").addClass("present")
+    };
+
+    if(currentHour <= 11) {
+        $("#time-block-4").addClass("future")
+    } else if (currentHour > 12) {
+        $("#time-block-4").addClass("past")
+    } else if (currentHour === 12) {
+        $("#time-block-4").addClass("present")
+    };
+
+    if(currentHour <= 12) {
+        $("#time-block-5").addClass("future")
+    } else if (currentHour > 13) {
+        $("#time-block-5").addClass("past")
+    } else if (currentHour === 13) {
+        $("#time-block-5").addClass("present")
+    };
+
+    if(currentHour <= 13) {
+        $("#time-block-6").addClass("future")
+    } else if (currentHour > 14) {
+        $("#time-block-6").addClass("past")
+    } else if (currentHour === 14) {
+        $("#time-block-6").addClass("present")
+    };
+
+    if(currentHour <= 14) {
+        $("#time-block-7").addClass("future")
+    } else if (currentHour > 15) {
+        $("#time-block-7").addClass("past")
+    } else if (currentHour === 15) {
+        $("#time-block-7").addClass("present")
+    };
+
+    if(currentHour <= 15) {
+        $("#time-block-8").addClass("future")
+    } else if (currentHour > 16) {
+        $("#time-block-8").addClass("past")
+    } else if (currentHour === 16) {
+        $("#time-block-8").addClass("present")
+    };
+
+    if(currentHour <= 16) {
+        $("#time-block-9").addClass("future")
+    } else if (currentHour > 17) {
+        $("#time-block-9").addClass("past")
+    } else if (currentHour === 17) {
+        $("#time-block-9").addClass("present")
+    };
