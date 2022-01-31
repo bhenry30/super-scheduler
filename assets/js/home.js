@@ -32,6 +32,7 @@ displayDate();
 
 
 // Color-codes time blocks for past, present and future
+
 // $(".hour").each(function(){
 //     var hourVal = parseInt($(this).prop("id"));
 //     console.log(hourVal)
@@ -44,7 +45,7 @@ displayDate();
 //     }
 // })
 
-    if(currentHour <= 8) {
+if(currentHour <= 8) {
         $("#time-block-1").addClass("future")
     } else if (currentHour > 9) {
         $("#time-block-1").addClass("past")
@@ -115,3 +116,8 @@ displayDate();
     } else if (currentHour === 17) {
         $("#time-block-9").addClass("present")
     };
+
+    // Allow user to type in event in timeblocks
+ $(".time-block").each(function(){
+     $(this).append('<textarea>');
+ })
