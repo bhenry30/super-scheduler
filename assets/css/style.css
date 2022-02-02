@@ -65,9 +65,17 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
+    display: flex;
   }
   
   .saveBtn i:hover {
-    font-size: 20px;
+    font-size: 30px;
     transition: all .3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .saveBtn i {
+    font-size: 1.5rem;
+    align-self: center;
+    padding-left: 1rem;
   }

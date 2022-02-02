@@ -33,18 +33,6 @@ displayDate();
 
 // Color-codes time blocks for past, present and future
 
-// $(".hour").each(function(){
-//     var hourVal = parseInt($(this).prop("id"));
-//     console.log(hourVal)
-//     if(hourVal > hour && hourVal < hour+6) {
-//         $(".time-block").addClass("future")
-//     } else if (hourVal < hour && hourVal > hour+6) {
-//         $(".time-block").addClass("past")
-//     } else if (hourVal === hour) {
-//         $(".time-block").addClass("present")
-//     }
-// })
-
 if(currentHour <= 8) {
         $("#time-block-1").addClass("future")
     } else if (currentHour > 9) {
@@ -117,7 +105,16 @@ if(currentHour <= 8) {
         $("#time-block-9").addClass("present")
     };
 
-    // Allow user to type in event in timeblocks
+// Allow user to type in event in timeblocks
  $(".time-block").each(function(){
-     $(this).append('<textarea>');
+     $(this).append('<textarea>').addClass("taskText");
  })
+
+// Save button event listener and vars to collect data to store
+$(".saveBtn").on("click", function(){
+    var time = $(this).siblings(".hour").attr("id");
+    var toDoText = $(this).siblings(".time-block").children().val();
+    // Save data to local storage 
+    localStorage.setItem(time, toDoText);
+    console.log(time, toDoText)
+})
