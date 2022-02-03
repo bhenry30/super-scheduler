@@ -20,14 +20,13 @@
 // Gets current date/hour
 const currentDate = new Date();
 var currentHour = currentDate.getHours();
-// var hour = ((currentHour + 11) % 12 + 1);
+var tasks = {};
 // console.log(hour)
 
 // Displays current date at top of calendar
 function displayDate() {
     $("#currentDay").text(currentDate)
 };
-
 displayDate();
 
 
@@ -107,7 +106,8 @@ if(currentHour <= 8) {
 
 // Allow user to type in event in timeblocks
  $(".time-block").each(function(){
-     $(this).append('<textarea>').addClass("taskText");
+     $(this).append('<textarea>');
+     $(this).children().addClass('taskText')
  })
 
 // Save button event listener and vars to collect data to store
@@ -118,3 +118,14 @@ $(".saveBtn").on("click", function(){
     localStorage.setItem(time, toDoText);
     console.log(time, toDoText)
 })
+
+// On refresh, grabs the data from local storage and displays it in time blocks
+$("#hour9 .taskText").val(localStorage.getItem('9'))
+$("#hour10 .taskText").val(localStorage.getItem('10'))
+$("#hour11 .taskText").val(localStorage.getItem('11'))
+$("#hour12 .taskText").val(localStorage.getItem('12'))
+$("#hour1 .taskText").val(localStorage.getItem('1'))
+$("#hour2 .taskText").val(localStorage.getItem('2'))
+$("#hour3 .taskText").val(localStorage.getItem('3'))
+$("#hour4 .taskText").val(localStorage.getItem('4'))
+$("#hour5 .taskText").val(localStorage.getItem('5'))
